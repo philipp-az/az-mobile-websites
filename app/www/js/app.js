@@ -36,7 +36,7 @@ angular.module('starter', ['ionic'
     })
 
 
-    .state('app.articleList', {
+    .state('app.frontpagehome', {
       url: "/home",
       views: {
         'menuContent' :{
@@ -46,9 +46,7 @@ angular.module('starter', ['ionic'
       }
     })
 
-
-
-    .state('app.article', {
+    .state('app.articlesub', {
       url: "/:ressort/:subressort/:articleTitle-:articleId",
       views: {
           'menuContent' :{
@@ -57,7 +55,15 @@ angular.module('starter', ['ionic'
           }
       }
     })
-
+    .state('app.article', {
+          url: "/:ressort/:articleTitle-:articleId",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/article.html",
+                  controller: 'ArticleList'
+              }
+          }
+    })
     .state('app.frontpagesub', {
       url: "/:ressort/:subressort",
       views: {
@@ -74,19 +80,6 @@ angular.module('starter', ['ionic'
               templateUrl: "templates/articleList.html",
               controller: 'ArticleList'
           }
-      }
-    })
-
-
-
-
-    .state('app.articleDetail', {
-      url: "/articleList/:articleId",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/article.html",
-          controller: 'ArticleList'
-        }
       }
     });
   // if none of the above states are matched, use this as the fallback

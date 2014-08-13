@@ -4,7 +4,7 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
     <ion-list>
-      <ion-item ng-repeat="a in data.articles" href="#/{{stateParams.ressort}}/{{stateParams.subressort}}/{{a.title}}-{{a.id}}">
+      <ion-item ng-repeat="a in data.articles" href="#/{{stateParams.ressort}}{{stateParams.subressort!=null && '/' || ''}}{{stateParams.subressort}}/{{a.title}}-{{a.id}}">
         <img ng-src="{{a.teaserImageURL}}" width="100">{{a.title}}
       </ion-item>
     </ion-list>
