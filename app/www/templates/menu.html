@@ -13,10 +13,12 @@
     </header>
     <ion-content class="has-header">
       <ion-list>
-        <ion-item nav-clear menu-close href="#/articleList">Ressort 1</ion-item>
-        <ion-item nav-clear menu-close href="#/articleList">Ressort 2</ion-item>
-        <ion-item nav-clear menu-close href="#/schweiz">Schweiz</ion-item>
-        <ion-item nav-clear menu-close href="#/ausland">Ausland</ion-item>
+        <ion-item nav-clear menu-close ng-repeat="r in data.ressorts" href="#/{{r.path}}">
+            {{r.name}}
+            <ion-item nav-clear menu-close ng-repeat="r2 in r.children" href="#/{{r.path}}/{{r2.path}}">
+                {{r2.name}}
+            </ion-item>
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-side-menu>

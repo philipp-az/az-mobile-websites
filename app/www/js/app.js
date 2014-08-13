@@ -37,7 +37,7 @@ angular.module('starter', ['ionic'
 
 
     .state('app.articleList', {
-      url: "/articleList",
+      url: "/home",
       views: {
         'menuContent' :{
           templateUrl: "templates/articleList.html",
@@ -46,25 +46,39 @@ angular.module('starter', ['ionic'
       }
     })
 
-    .state('app.schweiz', {
-          url: "/schweiz",
-          views: {
-              'menuContent' :{
-                  templateUrl: "templates/articleList.html",
-                  controller: 'ArticleList'
-              }
+
+
+    .state('app.article', {
+      url: "/:ressort/:subressort/:articleTitle-:articleId",
+      views: {
+          'menuContent' :{
+              templateUrl: "templates/article.html",
+              controller: 'ArticleList'
           }
+      }
     })
 
-    .state('app.ausland', {
-          url: "/ausland",
-          views: {
-              'menuContent' :{
-                  templateUrl: "templates/articleList.html",
-                  controller: 'ArticleList'
-              }
+    .state('app.frontpagesub', {
+      url: "/:ressort/:subressort",
+      views: {
+          'menuContent' :{
+              templateUrl: "templates/articleList.html",
+              controller: 'ArticleList'
           }
+      }
     })
+    .state('app.frontpagemain', {
+      url: "/:ressort",
+      views: {
+          'menuContent' :{
+              templateUrl: "templates/articleList.html",
+              controller: 'ArticleList'
+          }
+      }
+    })
+
+
+
 
     .state('app.articleDetail', {
       url: "/articleList/:articleId",
@@ -76,6 +90,6 @@ angular.module('starter', ['ionic'
       }
     });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/articleList');
+  $urlRouterProvider.otherwise('/home');
 });
 
