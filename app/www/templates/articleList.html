@@ -1,12 +1,33 @@
 <ion-view title="Articles">
+
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
+
   <ion-content class="has-header">
+
+    <!--
+    <div class="row" ng-repeat="a in data.articles" href="#/{{stateParams.ressort}}{{stateParams.subressort!=null && '/' || ''}}{{stateParams.subressort}}/{{a.title}}-{{a.id}}">
+      <div class="col col-20"><img ng-src="{{a.teaserImageURL}}" width="100"></div>
+      <div class="col">{{a.title}}</div>
+    </div>
+    -->
+    <div class="list">
+        <a class="item item-thumbnail-left" ng-repeat="a in data.articles" href="#/{{stateParams.ressort}}{{stateParams.subressort!=null && '/' || ''}}{{stateParams.subressort}}/{{a.title}}-{{a.id}}">
+          <img src="{{a.teaserImageURL}}">
+          <h2>{{a.title}}</h2>
+          <p>{{a.teaser}}</p>
+        </a>
+    </div>
+
+    <!--
     <ion-list>
       <ion-item ng-repeat="a in data.articles" href="#/{{stateParams.ressort}}{{stateParams.subressort!=null && '/' || ''}}{{stateParams.subressort}}/{{a.title}}-{{a.id}}">
         <img ng-src="{{a.teaserImageURL}}" width="100">{{a.title}}
       </ion-item>
     </ion-list>
+    -->
+
   </ion-content>
+
 </ion-view>

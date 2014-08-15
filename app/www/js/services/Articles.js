@@ -12,7 +12,7 @@ angular.module('starter')
             if (subressort) {
                 url+=subressort+'/';
             }
-            url+='/frontpage.json';
+            url+='frontpage.json';
 
 
             $http({method: 'GET', url: url})

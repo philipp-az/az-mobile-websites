@@ -1,5 +1,21 @@
 <ion-view title="Article">
-  <ion-content class="has-header" ng-repeat="a in data.articles | filter:stateParams.articleId">
+  <ion-content class="has-header" ng-repeat="a in data.articles | filter:{id:stateParams.articleId}">
+
+    <img ng-src="{{a.teaserImageURL}}"/>
+
+    <ion-slide-box >
+      <ion-slide>
+          <div class="box blue" style="background-color:blue"><h1>ASSET 1</h1></div>
+      </ion-slide>
+      <ion-slide>
+          <div class="box yellow" style="background-color:yellow"><h1>ASSET 2</h1></div>
+      </ion-slide>
+      <ion-slide>
+          <div class="box pink" style="background-color:pink"><h1>ASSET 3</h1></div>
+      </ion-slide>
+    </ion-slide-box>
+
     <h1>{{a.title}}</h1>
+    <div ng-bind-html="a.text"></div>
   </ion-content>
 </ion-view>
