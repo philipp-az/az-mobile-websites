@@ -1,4 +1,5 @@
 <ion-view title="Article">
+
   <ion-content class="has-header" ng-repeat="a in data.articles | filter:{id:stateParams.articleId}">
 
     <img ng-src="{{a.teaserImageURL}}"/>
@@ -17,5 +18,7 @@
 
     <h1>{{a.title}}</h1>
     <div ng-bind-html="a.text"></div>
+
   </ion-content>
+
 </ion-view>
