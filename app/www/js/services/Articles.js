@@ -5,7 +5,7 @@ angular.module('starter')
 
         this.get = function(ressort,subressort,cb) {
 
-            var url = 'http://www.aargauerzeitung.ch/';
+            var url = document.location.protocol+'//www.aargauerzeitung.ch/';
             if (ressort) {
                 url+=ressort+'/';
             }
@@ -13,7 +13,7 @@ angular.module('starter')
                 url+=subressort+'/';
             }
             url+='frontpage.json';
-
+            //console.log(url);
 
             $http({method: 'GET', url: url})
                 .success(function(data, status, headers, config) {
